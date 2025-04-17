@@ -1,0 +1,29 @@
+Bootstrap: docker
+From: python:3.10-slim
+
+%labels
+    Author Atharv Prajod
+    Version 0.1.0
+
+%post
+    # system deps
+    apt-get update && apt-get install -y --no-install-recommends \
+        build-essential git \
+     && rm -rf /var/lib/apt/lists/*
+
+    # install Python requirements
+    pip install --no-cache-dir \
+        torch transformers timm
+
+%environment
+    export LC_ALL=C.UTF-8
+    export LANG=C.UTF-8
+    export PYTHONUNBUFFERED=1
+
+%files
+    . /workspace
+
+%workdir /workspace
+
+%runscript
+    exec /bin/bash scripts/run_pipeline.sh
