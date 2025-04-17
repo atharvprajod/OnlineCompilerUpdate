@@ -1,0 +1,13 @@
+torch>=2.0.0
+tvm>=0.14.0
+pytorch-lightning>=2.0.0
+torch-geometric>=2.3.0
+numpy>=1.22.0
+pandas>=1.5.0
+matplotlib>=3.5.0
+scikit-learn>=1.0.0
+tensorboard>=2.10.0
+tqdm>=4.64.0
+onnx>=1.13.0
+tensorflow>=2.10.0
+onnx-tf>=1.10.0 
